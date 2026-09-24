@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ---------- Print styles ---------- */
+@media print {
+
+    /* Hide chrome */
+    aside,
+    header,
+    footer,
+    nav,
+    .print\:hidden,
+    [x-data]>button {
+        display: none !important;
+    }
+
+    /* Full width */
+    body,
+    html {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    /* Make the main area full width */
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Cards lose shadow */
+    .shadow-sm,
+    .shadow-md,
+    .shadow-lg,
+    .shadow-xl {
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+    }
+
+    /* Make link text black instead of blue/purple */
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    /* Tables without rounded corners */
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    /* Remove background colors so printer ink isn't wasted */
+    .bg-indigo-600,
+    .bg-green-600,
+    .bg-red-600,
+    .bg-gray-800,
+    .bg-gray-900 {
+        background: #f3f4f6 !important;
+        color: #111827 !important;
+    }
+}
